@@ -21,7 +21,7 @@ func (e *WrapError) Error() string {
 	return e.msg
 }
 
-func (e *WrapError) UnWrap() error {
+func (e *WrapError) Unwrap() error {
 	return e.err
 }
 
