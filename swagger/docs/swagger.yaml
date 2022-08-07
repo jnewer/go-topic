@@ -1,0 +1,87 @@
+basePath: /
+definitions:
+  main.Response:
+    properties:
+      data: {}
+      msg:
+        type: string
+    type: object
+host: localhost:8000
+info:
+  contact:
+    name: go-swagger帮助文档
+    url: https://github.com/swaggo/swag/blob/master/README_zh-CN.md
+  description: gin+gorm crud 测试swagger
+  license:
+    name: Apache 2.0
+  title: gin+gorm crud 测试swagger（必填）
+  version: 1.0 （必填）
+paths:
+  /posts:
+    post:
+      consumes:
+      - application/json
+      description: 添加post
+      parameters:
+      - description: json
+        in: body
+        name: content
+        required: true
+        schema:
+          type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/main.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/main.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/main.Response'
+      summary: 添加post
+      tags:
+      - posts
+  /posts/{id}:
+    get:
+      consumes:
+      - application/json
+      description: 查询
+      parameters:
+      - description: pid
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/main.Response'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/main.Response'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/main.Response'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/main.Response'
+      summary: 查询
+      tags:
+      - posts
+swagger: "2.0"
