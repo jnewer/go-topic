@@ -33,17 +33,17 @@ func getById(c *gin.Context) Post {
 	return post
 }
 
-// @Summary      查询
-// @Description  查询
-// @Tags         posts
-// @Accept       json
-// @Produce      json
-// @Param id path int true "pid"
-// @Success      200  {object} Response
-// @Failure      400  {object} Response
-// @Failure      404  {object} Response
-// @Failure      500  {object} Response
-// @Router       /posts/{id} [get]
+// @Summary     查询
+// @Description 查询
+// @Tags        posts
+// @Accept      json
+// @Produce     json
+// @Param       id  path     int true "pid"
+// @Success     200 {object} Response
+// @Failure     400 {object} Response
+// @Failure     404 {object} Response
+// @Failure     500 {object} Response
+// @Router      /posts/{id} [get]
 func Show(c *gin.Context) {
 	post := getById(c)
 	c.JSON(http.StatusOK, gin.H{
@@ -52,17 +52,17 @@ func Show(c *gin.Context) {
 	})
 }
 
-// @Summary      添加post
-// @Description  添加post
-// @Tags         posts
-// @Accept       json
-// @Produce      json
-// @Param content body string true "json"
-// @Success      200  {object} Response
-// @Failure      400  {object} Response
-// @Failure      404  {object} Response
-// @Failure      500  {object} Response
-// @Router       /posts [post]
+// @Summary     添加post
+// @Description 添加post
+// @Tags        posts
+// @Accept      json
+// @Produce     json
+// @Param       content body     string true "json"
+// @Success     200     {object} Response
+// @Failure     400     {object} Response
+// @Failure     404     {object} Response
+// @Failure     500     {object} Response
+// @Router      /posts [post]
 func Store(c *gin.Context) {
 	var post Post
 	if err := c.ShouldBindJSON(&post); err != nil {
