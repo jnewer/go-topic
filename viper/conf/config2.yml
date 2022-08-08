@@ -1,0 +1,5 @@
+db:
+  username: admin
+  password: 123
+  port: 3306
+  driver: mysql
